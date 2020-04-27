@@ -3,7 +3,8 @@ const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const MongoClient = require('mongodb');
-const url="mongodb://localhost:27017"
+//const url="mongodb://localhost:27017"
+const url = "mongodb+srv://dbuser:dbuser@cluster0-9fit7.mongodb.net/test?retryWrites=true&w=majority"
 
 app.set('PORT',process.env.PORT)
 app.use(cors());
