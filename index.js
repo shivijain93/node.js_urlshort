@@ -5,6 +5,7 @@ const cors = require('cors');
 const MongoClient = require('mongodb');
 const url="mongodb://localhost:27017"
 
+app.set('PORT',process.env.PORT)
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -53,6 +54,6 @@ function shortURL() {
     return short;
 }
 
-app.listen(3000, function () {
-    console.log("port is running at ",3000);
+app.listen(app.get('PORT'), function () {
+    console.log("port is running at ",app.get('PORT'))
 })
