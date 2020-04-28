@@ -6,7 +6,7 @@ const MongoClient = require('mongodb');
 //const url="mongodb://localhost:27017"
 const url = "mongodb+srv://dbuser:dbuser@cluster0-9fit7.mongodb.net/test?retryWrites=true&w=majority"
 
-app.set('PORT',process.env.PORT)
+//app.set('PORT',process.env.PORT)
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -55,6 +55,7 @@ function shortURL() {
     return short;
 }
 
-app.listen(app.get('PORT'), function () {
-    console.log("port is running at ",app.get('PORT'))
-})
+app.listen(process.env.PORT);
+    //console.log("port is running at ",app.get('PORT'))
+
+
